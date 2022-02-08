@@ -12,7 +12,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import static main.Main.properties;
+import static main.MyProperties.properties;
 
 public class Sender {
 
@@ -46,7 +46,7 @@ public class Sender {
             multiPart.addBodyPart(attachment);
             message.setContent(multiPart);
             Transport t = session.getTransport("smtp");
-            t.connect((String) Main.properties.get("mail.smtp.user"), "clave");
+            t.connect((String) properties.get("mail.smtp.user"), "clave");
             t.sendMessage(message, message.getAllRecipients());
             t.close();
         }catch (MessagingException me){
