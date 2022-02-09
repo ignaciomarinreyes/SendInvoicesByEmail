@@ -12,9 +12,7 @@ public class MyProperties {
         properties = new Properties();
         try {
             properties.load(getClass().getClassLoader().getResourceAsStream("properties"));
-        } catch(
-            FileNotFoundException e)
-        {
+        } catch(FileNotFoundException e) {
             e.printStackTrace();
         } catch(IOException e) {
             e.printStackTrace();

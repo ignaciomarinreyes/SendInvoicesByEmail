@@ -21,10 +21,12 @@ public class Reader {
             PDFTextStripper pdfStripper = new PDFTextStripper();
             pdfStripper.setStartPage(1);
             pdfStripper.setEndPage(1);
-            return pdfStripper.getText(pdDocument);
+            String contentPDF = pdfStripper.getText(pdDocument);
+            pdDocument.close();
+            return contentPDF;
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            throw new RuntimeException("En la " + filePDF.getName() + " no se pudo leer su contenido. No se han enviado las siguientes facturas");
         }
     }
 

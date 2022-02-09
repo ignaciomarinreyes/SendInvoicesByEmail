@@ -40,7 +40,7 @@ public class Sender {
             text.setText(content);
             BodyPart attachment = new MimeBodyPart();
             attachment.setDataHandler(new DataHandler(new FileDataSource(pathAttachment)));
-            attachment.setFileName(pathAttachment.substring(pathAttachment.lastIndexOf('/') + 1, pathAttachment.length()));
+            attachment.setFileName(pathAttachment.substring(pathAttachment.lastIndexOf('\\') + 1, pathAttachment.length()));
             MimeMultipart multiPart = new MimeMultipart();
             multiPart.addBodyPart(text);
             multiPart.addBodyPart(attachment);
@@ -51,7 +51,7 @@ public class Sender {
             t.close();
         }catch (MessagingException me){
             me.printStackTrace();
-            return;
+            throw new RuntimeException(pathAttachment + " no se pudo enviar por correo electrónico. No se han enviado las siguientes facturas");
         }
     }
 

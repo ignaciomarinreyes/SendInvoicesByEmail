@@ -13,9 +13,10 @@ public class Main {
         for (File file: files) {
             String email = reader.getEmailReceiver(file);
             sender.sendEmail(email, file.getName(), "Adjunto el archivo de " + file.getName(), file.getPath());
-            System.out.println("Enviado con éxito el archivo de " + file.getName());
+            System.out.println("Enviado con éxito el archivo de " + file.getName() + ".");
             file.delete();
         }
+        System.out.println("\nSe han enviado con éxito todas las facturas.");
     }
 
 }
