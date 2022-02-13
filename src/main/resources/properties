@@ -1,7 +1,9 @@
 mail.smtp.host=smtp.gmail.com
-mail.smtp.starttls.enable=true
 mail.smtp.port=587
 mail.smtp.mail.sender=1957ignaciomarin@gmail.com
 password=
 mail.smtp.auth=true
+mail.smtp.starttls.enable=true
+mail.smtp.ssl.trust=smtp.gmail.com
+mail.smtp.ssl.protocols=TLSv1.2
 path.folder.pdf=C:\\FactuSol 2000\\Informes
